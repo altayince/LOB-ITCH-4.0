@@ -8,7 +8,7 @@ Every other operation is done via vectors. For description and implementation se
 
 Protocol specification: http://www.borsaistanbul.com/docs/default-source/nasdaq-dokuman/b%c4%b1stech-%c4%b1tch-protocol-specification.pdf?sfvrsn=4
 
-Counting add,delete and execute orders as a packet, it can handle a packet in ~128 nanoseconds.
+Counting add,delete and execute orders as a packet, it can handle a packet in ~128 nanoseconds.(tested on Intel Core i7-6900K CPU @ 3.20Ghz)
 I/O needs ~ 40 nanoseconds.
 Book handling operations cost ~ 20 nanoseconds.
 If you have enough RAM, convert the hashmap to a vector, produce a unique number from order ID, order book ID and side. Use that unique number as the index. In this case performance is expected to double.
