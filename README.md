@@ -11,4 +11,21 @@ Protocol specification: http://www.borsaistanbul.com/docs/default-source/nasdaq-
 Counting add,delete and execute orders as a packet, it can handle a packet in ~128 nanoseconds.(tested on Intel Core i7-6900K CPU @ 3.20Ghz)
 I/O needs ~ 40 nanoseconds.
 Book handling operations cost ~ 20 nanoseconds.
-If you have enough RAM, convert the hashmap to a vector, produce a unique number from order ID, order book ID and side. Use that unique number as the index. In this case performance is expected to double.
+If you are to keep track of less than 16 books and if you have enough RAM,convert the hashmap to a vector, produce a unique number from order ID, order book ID and side. Use that unique number as the index. In this case performance is expected to double. 
+
+Build and execution details
+
+
+											
+							
+											
+	1 - Build the project with the following command: 				
+	g++ -O3 -march=native -std=c++1y main.cpp bufferedreader.cpp -o name.out	
+											
+	2 - Execute it with the following command :					
+	./name.out < [ITCH INPUT] [DESIRED BOOK ID] > [OUTPUT FILE]	 		
+										
+	IMPORTANT : BOOK ID MUST BE IN ARGV[1]						
+
+
+
