@@ -25,7 +25,7 @@ Build and execution details
 	2 - Execute it with the following command :					
 	./name.out < [ITCH INPUT] [DESIRED BOOK ID] > [OUTPUT FILE]	 		
 										
-	IMPORTANT : BOOK ID MUST BE IN ARGV[1]						
+	IMPORTANT : BOOK ID MUST BE IN ARGV[1]. IF YOU DON'T WANT TO PRINT ANYTHING USE 0 AS BOOK ID.						
 
 
 
