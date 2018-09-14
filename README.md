@@ -11,6 +11,7 @@ Protocol specification: http://www.borsaistanbul.com/docs/default-source/nasdaq-
 Counting add,delete and execute orders as a packet, it can handle a packet in ~128 nanoseconds.(tested on Intel Core i7-6900K CPU @ 3.20Ghz)
 I/O needs ~ 40 nanoseconds.
 Book handling operations cost ~ 20 nanoseconds.
+Rest is the hash map.
 If you are to keep track of less than 16 books and if you have enough RAM,convert the hashmap to a vector, produce a unique number from order ID, order book ID and side. Use that unique number as the index. In this case performance is expected to double. 
 
 Build and execution details
